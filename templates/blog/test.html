@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+{% load blog-tags%}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Test Blog</title>
+</head>
+<body>
+  {% load blog-tags %}
+
+<h1>{{ post.title }}</h1>
+
+<!-- نمایش تعداد کل پست‌ها -->
+<!--<p>Total posts: {% totalposts %}</p>-->
+
+<form action="{% url 'blog:test' %}" method="post">
+    {% csrf_token %}
+    {{form.as_p}}
+    <button type="submit">submit</button>
+</form>
+
+
+</body>
+</html>
